@@ -6,6 +6,7 @@ const express = require("express");
 const PORT = 8000;
 const app = express();
 
+// change to desired url
 const url =
   "https://www.wishesmsg.com/inspirational-messages-quotes-about-life/";
 
@@ -15,6 +16,7 @@ axios(url)
     const $ = cheerio.load(html);
     const qutoes = [];
 
+    // search for specific class withing the specified url. change the ".m" to the desired class
     $(".m", html).each(function () {
       const quote = $(this).text();
 
